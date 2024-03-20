@@ -16,7 +16,7 @@ MonoBehaviour:
   _icon: {fileID: -2290489026418888253, guid: 488be1d9baf26e747b6db4619308166d, type: 3}
   _pointsForMerging: 25
   _MergeInto: {fileID: 11400000, guid: af348e5d9dde6df47a36266aec993b90, type: 2}
-  _size: {x: 1.2, y: 1.2}
+  _size: {x: 7, y: 7}
   _physicsMaterial: {fileID: 6200000, guid: b3d10c2fc860d684799b7dd3ec49d18b, type: 2}
   _colliderPoints:
   - {x: 0.21, y: 0.08}

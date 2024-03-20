@@ -27,8 +27,12 @@ public class GameFlowScript : MonoBehaviour
             if (_lostFruits.Exists(i=>i==collision.gameObject))
             _lostFruits.Remove(collision.gameObject);
 
-            if (_lostFruits.Count==0)
-            _FruitInDangerZone = false;
+            if (_lostFruits.Count == 0)
+            {
+                _FruitInDangerZone = false;
+
+                TimeRemaining?.Invoke(_timeToLose - (Time.time - _timer), _FruitInDangerZone);
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -47,6 +51,11 @@ public class GameFlowScript : MonoBehaviour
     {
         if (_FruitInDangerZone)
         {
+            foreach(GameObject gameObj in _lostFruits)
+            {
+                if (gameObj == null) _lostFruits.Remove(gameObj);
+            }
+            if (_lostFruits.Count == 0) _FruitInDangerZone = false;
             TimeRemaining?.Invoke(_timeToLose-(Time.time-_timer), _FruitInDangerZone);
 
             if (Time.time - _timer>=_timeToLose)

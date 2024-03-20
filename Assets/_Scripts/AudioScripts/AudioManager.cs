@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager audioManager;
 
 
-    [SerializeField] private AudioSource musicSource, sfxSource;
+    [SerializeField] private AudioSource musicSource, sfxSource, pitchSfxSource;
 
     public float MusicVolume, SfxVolume;
 
@@ -46,6 +46,7 @@ public class AudioManager : MonoBehaviour
     {
         if (clip != _lastSound)
         {
+            sfxSource.pitch = _initPitch;
             sfxSource.PlayOneShot(clip);
             _lastSound = clip;
             StartCoroutine(SoundPlayingCoolDown());
@@ -71,10 +72,16 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySoundPitch(AudioClip clip,float pitch)
     {
-        sfxSource.pitch = pitch;
-        PlaySound(clip);
+        if (clip != _lastSound)
+        {
 
-       
+            pitchSfxSource.pitch = pitch;
+           pitchSfxSource.PlayOneShot(clip);
+            _lastSound = clip;
+            StartCoroutine(SoundPlayingCoolDown());
+        }
+
+
     }
     public void PlaySoundDelay(AudioClip clip, float delay)
     {
@@ -94,7 +101,7 @@ public class AudioManager : MonoBehaviour
     public void ChangeVolumeSfx(float volume)
     {
         SfxVolume = volume;
-
+        pitchSfxSource.volume = volume;
         sfxSource.volume = SfxVolume;
     }
 
