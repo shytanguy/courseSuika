@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: fc10876671b1dc14ca0d73796a3cbffb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _TimerSound: {fileID: 8300000, guid: 4d0e85bf2e99b3f43a0fd65e1a7d01f0, type: 3}
+  - _LostSound: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

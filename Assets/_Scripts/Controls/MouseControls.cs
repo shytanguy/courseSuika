@@ -17,6 +17,7 @@ public class MouseControls : MonoBehaviour
    
     private Vector3 ConvertMousePosition(Vector2 positionInput)
     {
+
        Vector3 worldPos = _mainCam.ScreenToWorldPoint(positionInput);
 
         return worldPos;

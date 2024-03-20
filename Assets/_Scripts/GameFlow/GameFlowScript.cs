@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,12 +12,22 @@ public class GameFlowScript : MonoBehaviour
 
     private bool _FruitInDangerZone;
 
-   
+    private float _timer;
+
+    public event Action<float,bool> TimeRemaining;
+
+    public event Action GameLost;
+
+    private List<GameObject> _lostFruits=new List<GameObject>();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if ((_FruitLayers.value & (1 << collision.gameObject.layer)) > 0)
         {
+            if (_lostFruits.Exists(i=>i==collision.gameObject))
+            _lostFruits.Remove(collision.gameObject);
+
+            if (_lostFruits.Count==0)
             _FruitInDangerZone = false;
         }
     }
@@ -25,11 +35,32 @@ public class GameFlowScript : MonoBehaviour
     {
         if ((_FruitLayers.value & (1 << collision.gameObject.layer)) > 0&&gameObject.activeInHierarchy)
         {
+            _timer = Time.time;
 
-            StartCoroutine(LosingTimer());
+            if (collision.gameObject.activeInHierarchy)
+            _lostFruits.Add( collision.gameObject);
+
+            _FruitInDangerZone = true;
         }
     }
+    private void Update()
+    {
+        if (_FruitInDangerZone)
+        {
+            TimeRemaining?.Invoke(_timeToLose-(Time.time-_timer), _FruitInDangerZone);
 
+            if (Time.time - _timer>=_timeToLose)
+            {
+                _FruitInDangerZone = false;
+
+                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+
+            }
+        }
+       
+           
+
+    }
     private IEnumerator LosingTimer()
     {
         if (_FruitInDangerZone) yield break;
@@ -43,7 +74,7 @@ public class GameFlowScript : MonoBehaviour
 
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
 
-       
+            GameLost?.Invoke();
 
             StopAllCoroutines();
         }

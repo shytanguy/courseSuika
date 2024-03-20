@@ -15,7 +15,7 @@ MonoBehaviour:
   _name: fruit 2
   _icon: {fileID: 8459430566571322924, guid: 488be1d9baf26e747b6db4619308166d, type: 3}
   _pointsForMerging: 2
-  _MergeInto: {fileID: 11400000, guid: af348e5d9dde6df47a36266aec993b90, type: 2}
+  _MergeInto: {fileID: 11400000, guid: c1d0476124c21cd4f917b513ff3941d4, type: 2}
   _size: {x: 0.5, y: 0.5}
   _physicsMaterial: {fileID: 6200000, guid: b3d10c2fc860d684799b7dd3ec49d18b, type: 2}
   _colliderPoints:

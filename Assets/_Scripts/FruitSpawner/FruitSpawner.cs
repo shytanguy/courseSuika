@@ -40,19 +40,25 @@ public class FruitSpawner : MonoBehaviour
 
 
     }
+    private void Start()
+    {
+        ChangeFruit();
+    }
 
- 
     private void DropFruit(Vector3 DropPosition)
     {
         MoveFruit(DropPosition);
 
-        if (_CurrentFruit!=null)
+        if (_CurrentFruit != null)
+        {
 
-        _CurrentFruit.GravityOn(true);
+            _CurrentFruit.GravityOn(true);
 
-        _CurrentFruit = null;
+            _CurrentFruit = null;
 
-        StartCoroutine(ChangeFruitDelay());
+
+            StartCoroutine(ChangeFruitDelay());
+        }
     }
 
     private void ChangeFruit()
@@ -68,6 +74,7 @@ public class FruitSpawner : MonoBehaviour
 
     private IEnumerator ChangeFruitDelay()
     {
+        if (_CurrentFruit != null) yield break;
         yield return new WaitForSeconds(0.5f);
 
         ChangeFruit();

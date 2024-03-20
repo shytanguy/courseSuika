@@ -10,7 +10,7 @@ public class FruitBehaviourScript : MonoBehaviour
 
 
  
-    public event Action<FruitSO> FruitChanged;
+   
 
   [SerializeField]  private SpriteRenderer _spriteRenderer;
 
@@ -24,6 +24,10 @@ public class FruitBehaviourScript : MonoBehaviour
 
     public event Action Dropped;
 
+    public event Action<FruitSO> FruitChanged;
+
+    public event Action MergeEvent;
+
     [SerializeField] private float _growSpeed = 0.05f;
     
     private void Awake()
@@ -34,7 +38,6 @@ public class FruitBehaviourScript : MonoBehaviour
 
         _collider = GetComponent<PolygonCollider2D>();
 
-     
     }
 
     public Vector2 GetExdendsOfCollider()
@@ -56,7 +59,7 @@ public class FruitBehaviourScript : MonoBehaviour
     }
     private void Start()
     {
-        GravityOn(false);
+      
         transform.localScale = Vector3.zero;
     }
 
@@ -97,6 +100,8 @@ public class FruitBehaviourScript : MonoBehaviour
 
             UpdateFruitSO(_fruitType.GetMergeFruit());
 
+            MergeEvent?.Invoke();
+
             transform.localScale = Vector3.zero;
         }
 
@@ -113,6 +118,7 @@ public class FruitBehaviourScript : MonoBehaviour
 
         _rigidBody2d.sharedMaterial = _fruitType.GetPhysicsMaterial2D();
 
+        if (_rigidBody2d.gravityScale!=0)
         _rigidBody2d.gravityScale = _fruitType.GetGravityScale();
 
         _collider.points = _fruitType.GetColliderPoints();
