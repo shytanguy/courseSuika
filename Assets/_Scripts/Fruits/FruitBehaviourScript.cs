@@ -10,7 +10,7 @@ public class FruitBehaviourScript : MonoBehaviour
 
 
  
-    private event Action<FruitSO> FruitChanged;
+    public event Action<FruitSO> FruitChanged;
 
   [SerializeField]  private SpriteRenderer _spriteRenderer;
 
@@ -22,7 +22,10 @@ public class FruitBehaviourScript : MonoBehaviour
 
     private bool _merging=false;
 
+    public event Action Dropped;
 
+    [SerializeField] private float _growSpeed = 0.05f;
+    
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -30,25 +33,33 @@ public class FruitBehaviourScript : MonoBehaviour
         _rigidBody2d = GetComponent<Rigidbody2D>();
 
         _collider = GetComponent<PolygonCollider2D>();
+
+     
+    }
+
+    public Vector2 GetExdendsOfCollider()
+    {
+        return _collider.bounds.extents;
+    }
+
+    private void FixedUpdate()
+    {
+        if (transform.localScale != (Vector3)_fruitType.GetSize())
+        {
+            transform.localScale += _growSpeed*(Vector3)_fruitType.GetSize();
+
+            if (transform.localScale.x > _fruitType.GetSize().x)
+            {
+                transform.localScale = _fruitType.GetSize();
+            }
+        }
     }
     private void Start()
     {
-        UpdateFruitSO(_fruitType);
-
         GravityOn(false);
-
-       
-      
-    }
-    private void OnDisable()
-    {
-        FruitChanged -= UpdateFruitSO;
+        transform.localScale = Vector3.zero;
     }
 
-    private void OnEnable()
-    {
-        FruitChanged += UpdateFruitSO;
-    }
     public bool GravityOn(bool gravityOn)
     {
         if (gravityOn == false)
@@ -57,8 +68,13 @@ public class FruitBehaviourScript : MonoBehaviour
             _rigidBody2d.gravityScale = 0;
         }
         else
+        {
             _rigidBody2d.gravityScale = _fruitType.GetGravityScale();
 
+            Dropped?.Invoke();
+
+        }
+       
         return gravityOn;
     }
     public bool GetMergeStatus()
@@ -79,9 +95,9 @@ public class FruitBehaviourScript : MonoBehaviour
 
             Destroy(fruit.gameObject);
 
-            _fruitType = _fruitType.GetMergeFruit();
+            UpdateFruitSO(_fruitType.GetMergeFruit());
 
-            FruitChanged?.Invoke(_fruitType);
+            transform.localScale = Vector3.zero;
         }
 
         _merging = false;
@@ -89,6 +105,7 @@ public class FruitBehaviourScript : MonoBehaviour
 
     public void UpdateFruitSO(FruitSO fruit)
     {
+        _fruitType = fruit;
 
         transform.localScale = _fruitType.GetSize();
 
@@ -99,16 +116,11 @@ public class FruitBehaviourScript : MonoBehaviour
         _rigidBody2d.gravityScale = _fruitType.GetGravityScale();
 
         _collider.points = _fruitType.GetColliderPoints();
+
+        FruitChanged?.Invoke(_fruitType);
     }
 
-   /* private void OnValidate()
-    {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
 
-        _rigidBody2d = GetComponent<Rigidbody2D>();
-
-        UpdateFruitSO(_fruitType);
-    }*/
     public FruitSO GetFruit()
     {
         return _fruitType;
@@ -126,4 +138,5 @@ public class FruitBehaviourScript : MonoBehaviour
             }
         }
     }
+    
 }

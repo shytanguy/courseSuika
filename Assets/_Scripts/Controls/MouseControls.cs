@@ -8,10 +8,6 @@ public class MouseControls : MonoBehaviour
 {
     [SerializeField] private PlayerInput _playerInput;
 
-    [SerializeField] private float _radius;
-
-    [SerializeField] private LayerMask _AllowedToClickLayers;
-
     public event Action<Vector3> PositionClicked;
 
     public event Action<Vector3> MouseHoverPositionChanged;
@@ -19,23 +15,11 @@ public class MouseControls : MonoBehaviour
     private Camera _mainCam;
 
    
-    private bool ShootRayAtPosition(Vector2 positionInput, out Vector3 worldPosition)
+    private Vector3 ConvertMousePosition(Vector2 positionInput)
     {
-        Vector3 worldPos=  _mainCam.ScreenToWorldPoint(positionInput);
+       Vector3 worldPos = _mainCam.ScreenToWorldPoint(positionInput);
 
-        if (Physics2D.OverlapCircle(worldPos, _radius, _AllowedToClickLayers) != null)
-        {
-            worldPosition = worldPos;
-
-            return true;
-        }
-        else
-        {
-
-            worldPosition = Vector3.zero;
-
-            return false;
-        }
+        return worldPos;
     }
 
     private void Start()
@@ -63,12 +47,8 @@ public class MouseControls : MonoBehaviour
 
     private void ClickPosition(InputAction.CallbackContext context)
     {
-        Vector3 worldPosition;
-
-        if (ShootRayAtPosition(_playerInput.actions["SetPosition"].ReadValue<Vector2>(), out worldPosition))
-        {
-            PositionClicked?.Invoke(worldPosition);
-        }
+   
+         PositionClicked?.Invoke(ConvertMousePosition(_playerInput.actions["SetPosition"].ReadValue<Vector2>()));
 
     }
 }

@@ -1121,6 +1121,7 @@ MonoBehaviour:
   _fruitsScriptableObjectsToSpawn:
   - {fileID: 11400000, guid: af348e5d9dde6df47a36266aec993b90, type: 2}
   - {fileID: 11400000, guid: 29ba2d1fe6001524a9a112fcdfbf01db, type: 2}
+  - {fileID: 11400000, guid: af348e5d9dde6df47a36266aec993b90, type: 2}
   _YCoordinateSpawn: 0
   _AllowedXCoords: {x: -1, y: 1.3}
 --- !u!114 &2146276500
@@ -1166,10 +1167,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 2146276500}
-  _radius: 0.1
-  _AllowedToClickLayers:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!4 &2146276502
 Transform:
   m_ObjectHideFlags: 0

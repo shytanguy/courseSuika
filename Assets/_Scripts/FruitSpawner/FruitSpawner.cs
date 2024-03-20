@@ -17,6 +17,7 @@ public class FruitSpawner : MonoBehaviour
 
     [SerializeField] private Vector2 _AllowedXCoords;
 
+    private float _fruitBoundsX;
     private void OnEnable()
     {
         _mouseControls.PositionClicked += DropFruit;
@@ -33,7 +34,7 @@ public class FruitSpawner : MonoBehaviour
     {
         if (_CurrentFruit == null) return;
 
-        float XCoordinate =Mathf.Clamp(  position.x,_AllowedXCoords.x,_AllowedXCoords.y);
+        float XCoordinate =Mathf.Clamp(  position.x,_AllowedXCoords.x+_fruitBoundsX/2,_AllowedXCoords.y-_fruitBoundsX/2);
 
         _CurrentFruit.transform.position = new Vector3(XCoordinate, _YCoordinateSpawn);
 
@@ -61,6 +62,8 @@ public class FruitSpawner : MonoBehaviour
 
 
         _CurrentFruit.UpdateFruitSO(_fruitsScriptableObjectsToSpawn[Random.Range(0, _fruitsScriptableObjectsToSpawn.Length)]);
+
+        _fruitBoundsX = _CurrentFruit.GetExdendsOfCollider().x;
     }
 
     private IEnumerator ChangeFruitDelay()

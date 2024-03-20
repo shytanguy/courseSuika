@@ -12,6 +12,8 @@ public class GameFlowScript : MonoBehaviour
 
     private bool _FruitInDangerZone;
 
+   
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if ((_FruitLayers.value & (1 << collision.gameObject.layer)) > 0)
@@ -21,7 +23,7 @@ public class GameFlowScript : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if ((_FruitLayers.value & (1 << collision.gameObject.layer)) > 0)
+        if ((_FruitLayers.value & (1 << collision.gameObject.layer)) > 0&&gameObject.activeInHierarchy)
         {
 
             StartCoroutine(LosingTimer());
@@ -37,10 +39,13 @@ public class GameFlowScript : MonoBehaviour
         
         if (_FruitInDangerZone == true)
         {
-          
+            _FruitInDangerZone = false;
+
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
 
-         
+       
+
+            StopAllCoroutines();
         }
     }
 }
