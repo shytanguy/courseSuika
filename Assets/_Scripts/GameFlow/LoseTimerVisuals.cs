@@ -37,7 +37,7 @@ public class LoseTimerVisuals : MonoBehaviour
         {
             _textMesh.text = time.ToString("0.00");
             if (time>0)
-            _textMesh.rectTransform.localScale = _initScale * Mathf.Clamp( 1/time,0.5f,10);
+            _textMesh.rectTransform.localScale = _initScale * Mathf.Clamp( 1/time,0.5f,4);
         }
     }
 }

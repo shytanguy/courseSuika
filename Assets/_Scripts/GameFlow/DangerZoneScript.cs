@@ -9,56 +9,85 @@ public class DangerZoneScript : MonoBehaviour
 
     [SerializeField] private LayerMask _fruitLayer;
 
-    private bool _Danger;
+   [SerializeField] private bool _Danger;
 
-    private float _transparency=0;
+    [SerializeField] private float _flashSpeed=0.01f;
+
+   [SerializeField] private float _transparency=0;
 
     private bool _addTransparency=true;
+
+  [SerializeField]  private float _TimeBeforeDanger=1;
+
+    private bool _Colliding;
+    private IEnumerator DangerTimer()
+    {
+        yield return new WaitForSeconds(_TimeBeforeDanger);
+        if (_Colliding==true)
+        _Danger = true;
+
+    }
     private void Awake()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-       if ((_fruitLayer.value & (1 << collision.gameObject.layer)) > 0&&_Danger==false)
         {
-            _Danger = true;
+            if ((_fruitLayer.value & (1 << collision.gameObject.layer)) > 0 && _Danger == false)
+            {
+                _Colliding = true;
+
+                StartCoroutine(DangerTimer());
+            }
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
+        if ((_fruitLayer.value & (1 << collision.gameObject.layer)) > 0)
+        _Colliding = false;
         if ((_fruitLayer.value & (1 << collision.gameObject.layer)) > 0 && _Danger == true)
         {
             if (collision.gameObject.transform.position.y < transform.position.y)
             {
-                _meshRenderer.material.color = new Vector4(1, 0, 0, 0);
+              
                 _Danger = false;
             }
         }
     }
+  
 
     private void Update()
     {
         if (_Danger)
         {
-            _meshRenderer.material.SetColor(0, new Vector4(1,0,0,_transparency));
 
-            if (_addTransparency) {
-                _transparency += 0.01f;
+            if (_addTransparency)
+            {
+                _transparency += _flashSpeed;
 
-                if (_transparency > 0.85f)
+                if (_transparency > 1f)
                     _addTransparency = false;
             }
             else
             {
-                _transparency -= 0.01f;
+                _transparency -= _flashSpeed;
 
                 if (_transparency < 0.1f)
                     _addTransparency = true;
             }
+            _meshRenderer.material.color = new Color(1, 0, 0, _transparency);
 
+        }
+        else
+        {
+            if (_transparency > 0f)
+                _transparency -= _flashSpeed ;
+            _meshRenderer.material.color = new Color(1, 0, 0, 0);
         }
     }
 }
