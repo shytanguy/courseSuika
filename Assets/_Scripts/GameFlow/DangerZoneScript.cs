@@ -61,7 +61,7 @@ public class DangerZoneScript : MonoBehaviour
     }
   
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_Danger)
         {

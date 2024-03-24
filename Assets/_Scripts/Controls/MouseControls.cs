@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,7 +15,7 @@ public class MouseControls : MonoBehaviour
 
     private Camera _mainCam;
 
-   
+   [SerializeField] private PauseMenuController _pauseMenu;
     private Vector3 ConvertMousePosition(Vector2 positionInput)
     {
 
@@ -26,20 +27,43 @@ public class MouseControls : MonoBehaviour
     private void Start()
     {
         _mainCam = Camera.main;
-
-       
+  
     }
+    private void PauseMouse(bool pause)
+    {
+        if (pause) _playerInput.actions["Click"].performed -= ClickPosition;
 
+        else _playerInput.actions["Click"].performed += ClickPosition;
+
+
+    }
+    private IEnumerator SubscribeDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        _playerInput.actions["Click"].performed += ClickPosition;
+    }
     private void OnEnable()
     {
         _playerInput.actions["Click"].performed += ClickPosition;
-    }
 
+        _playerInput.actions["Pause"].performed += PauseGameInput;
+
+        _pauseMenu.Pause += PauseMouse;
+      
+    }
+    private void PauseGameInput(InputAction.CallbackContext context)
+    {
+        _pauseMenu.PauseEvent();
+    }
     private void OnDisable()
     {
         _playerInput.actions["Click"].performed -= ClickPosition;
+
+        _playerInput.actions["Pause"].performed -= PauseGameInput;
+
+        _pauseMenu.Pause -= PauseMouse;
     }
-    private void Update()
+    private void FixedUpdate()
     {
      
        MouseHoverPositionChanged?.Invoke( _mainCam.ScreenToWorldPoint(_playerInput.actions["SetPosition"].ReadValue<Vector2>()));

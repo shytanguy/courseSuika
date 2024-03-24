@@ -6,86 +6,71 @@ using UnityEngine.SceneManagement;
 
 public class GameFlowScript : MonoBehaviour
 {
-    [SerializeField] private LayerMask _FruitLayers;
 
+    [HideInInspector] public static GameFlowScript instance;
     [SerializeField] private float _timeToLose;
 
-    private bool _FruitInDangerZone;
+    public float yCoordinate;
 
-    private float _timer;
+    private  float _timer;
 
-    public event Action<float,bool> TimeRemaining;
+    public  event Action<float,bool> TimeRemaining;
 
-    public event Action GameLost;
+    public  event Action GameLost;
 
-    private List<GameObject> _lostFruits=new List<GameObject>();
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private  bool _fruitsInDanger;
+    private List<Transform> _fruitsLeftOut=new List<Transform>();
+
+    private void Awake()
     {
-        if ((_FruitLayers.value & (1 << collision.gameObject.layer)) > 0)
-        {
-            if (_lostFruits.Exists(i=>i==collision.gameObject))
-            _lostFruits.Remove(collision.gameObject);
-
-            if (_lostFruits.Count == 0)
-            {
-                _FruitInDangerZone = false;
-
-                TimeRemaining?.Invoke(_timeToLose - (Time.time - _timer), _FruitInDangerZone);
-            }
-        }
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void Start()
     {
-        if ((_FruitLayers.value & (1 << collision.gameObject.layer)) > 0&&gameObject.activeInHierarchy)
-        {
-            _timer = Time.time;
-
-            if (collision.gameObject.activeInHierarchy)
-            _lostFruits.Add( collision.gameObject);
-
-            _FruitInDangerZone = true;
-        }
+        _fruitsLeftOut.Clear();
     }
-    private void Update()
+    public  void AddDanger(Transform fruit)
     {
-        if (_FruitInDangerZone)
+        if (_fruitsLeftOut.Count == 0) _timer = Time.time;
+        _fruitsLeftOut.Add(fruit);
+        _fruitsInDanger = true;
+     
+    }
+    public  void RemoveDanger(Transform fruit)
+    {
+        _fruitsLeftOut.Remove(fruit);
+
+        if (_fruitsLeftOut.Count == 0)
         {
-            foreach(GameObject gameObj in _lostFruits)
-            {
-                if (gameObj == null) _lostFruits.Remove(gameObj);
-            }
-            if (_lostFruits.Count == 0) _FruitInDangerZone = false;
-            TimeRemaining?.Invoke(_timeToLose-(Time.time-_timer), _FruitInDangerZone);
+            _fruitsInDanger = false;
+
+            TimeRemaining?.Invoke(_timeToLose - (Time.time - _timer), _fruitsInDanger);
+        } 
+
+    }
+    private  void FixedUpdate()
+    {
+        if (_fruitsLeftOut.Count>0)
+        {
+                
+            TimeRemaining?.Invoke(_timeToLose-(Time.time-_timer), _fruitsInDanger);
 
             if (Time.time - _timer>=_timeToLose)
             {
-                _FruitInDangerZone = false;
 
-                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+                _fruitsLeftOut.Clear();
+
+                GameLost?.Invoke();
+              
 
             }
         }
-       
-           
+      
 
     }
-    private IEnumerator LosingTimer()
-    {
-        if (_FruitInDangerZone) yield break;
-
-        _FruitInDangerZone = true;
-        yield return new WaitForSeconds(_timeToLose);
-        
-        if (_FruitInDangerZone == true)
-        {
-            _FruitInDangerZone = false;
-
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-
-            GameLost?.Invoke();
-
-            StopAllCoroutines();
-        }
-    }
+  
 }

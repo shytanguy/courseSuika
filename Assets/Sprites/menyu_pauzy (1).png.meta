@@ -1,0 +1,249 @@
+fileFormatVersion: 2
+guid: 52c93f30b1ccf8c40ad4254786a63448
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9144835312267595555
+    second: menyu_pauzy (1)_0
+  - first:
+      213: 3136300109875418689
+    second: menyu_pauzy (1)_1
+  - first:
+      213: -7270524000109363930
+    second: menyu_pauzy (1)_2
+  - first:
+      213: -6940049771516840973
+    second: menyu_pauzy (1)_3
+  - first:
+      213: -4290959966393869512
+    second: menyu_pauzy (1)_4
+  - first:
+      213: 3174341824523292630
+    second: menyu_pauzy (1)_5
+  - first:
+      213: 3435299661351437927
+    second: menyu_pauzy (1)_6
+  - first:
+      213: -712451245981332171
+    second: menyu_pauzy (1)_7
+  - first:
+      213: -6360644340506382303
+    second: menyu_pauzy (1)_8
+  - first:
+      213: 6126561980133140866
+    second: menyu_pauzy (1)_9
+  - first:
+      213: -1415088569710627751
+    second: menyu_pauzy (1)_10
+  - first:
+      213: 5336520459834630057
+    second: menyu_pauzy (1)_11
+  - first:
+      213: -1212501979468499442
+    second: menyu_pauzy (1)_12
+  - first:
+      213: 6952265563262599751
+    second: menyu_pauzy (1)_13
+  - first:
+      213: -7788376864558469265
+    second: menyu_pauzy (1)_14
+  - first:
+      213: 8527077178831390223
+    second: menyu_pauzy (1)_15
+  - first:
+      213: -5912778021008481709
+    second: menyu_pauzy (1)_16
+  - first:
+      213: 4128865045288810882
+    second: menyu_pauzy (1)_17
+  - first:
+      213: -7339618727590043587
+    second: menyu_pauzy (1)_18
+  - first:
+      213: 3856552896837474557
+    second: menyu_pauzy (1)_19
+  - first:
+      213: 9002296732719168475
+    second: menyu_pauzy (1)_20
+  - first:
+      213: 2004891940442559969
+    second: menyu_pauzy (1)_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: volume
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 81
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28977fd02ecac4930800000000000000
+      internalID: 4128865045288810882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ac386b7d3a3994e419b3ca99a6e9301d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      menyu_pauzy (1)_0: -9144835312267595555
+      menyu_pauzy (1)_1: 3136300109875418689
+      menyu_pauzy (1)_10: -1415088569710627751
+      menyu_pauzy (1)_11: 5336520459834630057
+      menyu_pauzy (1)_12: -1212501979468499442
+      menyu_pauzy (1)_13: 6952265563262599751
+      menyu_pauzy (1)_14: -7788376864558469265
+      menyu_pauzy (1)_15: 8527077178831390223
+      menyu_pauzy (1)_16: -5912778021008481709
+      menyu_pauzy (1)_18: -7339618727590043587
+      menyu_pauzy (1)_19: 3856552896837474557
+      menyu_pauzy (1)_2: -7270524000109363930
+      menyu_pauzy (1)_20: 9002296732719168475
+      menyu_pauzy (1)_21: 2004891940442559969
+      menyu_pauzy (1)_3: -6940049771516840973
+      menyu_pauzy (1)_4: -4290959966393869512
+      menyu_pauzy (1)_5: 3174341824523292630
+      menyu_pauzy (1)_6: 3435299661351437927
+      menyu_pauzy (1)_7: -712451245981332171
+      menyu_pauzy (1)_8: -6360644340506382303
+      menyu_pauzy (1)_9: 6126561980133140866
+      volume: 4128865045288810882
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

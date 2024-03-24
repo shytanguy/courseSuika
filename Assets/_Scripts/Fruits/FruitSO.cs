@@ -28,7 +28,12 @@ public class FruitSO : ScriptableObject
     }
     public Vector2[] GetColliderPoints()
     {
-        return _colliderPoints;
+        Vector2[] points=new Vector2[_colliderPoints.Length];
+        for(int i = 0; i < _colliderPoints.Length; i++)
+        {
+            points[i] = _colliderPoints[i];
+        }
+        return points;
     }
 
     public PhysicsMaterial2D GetPhysicsMaterial2D()

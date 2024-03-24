@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3796766627861520145}
   - component: {fileID: 88723110431540294}
   - component: {fileID: -2092029294539525660}
+  - component: {fileID: -7815224860460745688}
   m_Layer: 3
   m_Name: Fruit
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.73, y: -2.73, z: -0.37}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,12 +82,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -6892307667117130546, guid: 488be1d9baf26e747b6db4619308166d, type: 3}
+  m_Sprite: {fileID: -90375647409325229, guid: 06c44a9766e8e444b9b16b9b4de0e4eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.4, y: 4.69}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 618e5621f6b5eb449ae39eb93b19ae43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fruitType: {fileID: 11400000, guid: 29ba2d1fe6001524a9a112fcdfbf01db, type: 2}
+  _fruitType: {fileID: 11400000, guid: af348e5d9dde6df47a36266aec993b90, type: 2}
   _spriteRenderer: {fileID: 8313319852687603256}
   _rigidBody2d: {fileID: 2141765173985375725}
   _collider: {fileID: 0}
@@ -139,6 +140,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _growSpeed: 0.05
+  _effect: {fileID: 9164044671389968408, guid: c97bc5bfb834ccd49aa865a4d672c5e4, type: 3}
 --- !u!120 &1875752871216995255
 LineRenderer:
   serializedVersion: 2
@@ -182,7 +184,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: -1
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
@@ -235,8 +237,8 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 3
-    textureScale: {x: 1, y: 1}
+    textureMode: 1
+    textureScale: {x: 5, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
@@ -297,8 +299,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.62, y: 0.56}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 3.4, y: 4.69}
+    newSize: {x: 3.4, y: 4.69}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -339,3 +341,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 560c27781cf2bc7438c4721c88cbc19f, type: 3}
   _CollisionSound: {fileID: 8300000, guid: f51bd0322eb440144b91cfd6369924b1, type: 3}
   _DropSound: {fileID: 8300000, guid: 2153f06c32b2fc04cab937a434e59af6, type: 3}
+--- !u!114 &-7815224860460745688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3388111789817424708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e792338c47634594cb12ef307c98a942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dangerZone:
+    serializedVersion: 2
+    m_Bits: 128

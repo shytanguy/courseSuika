@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+
 
 public class FruitSpawner : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class FruitSpawner : MonoBehaviour
     [SerializeField] private Vector2 _AllowedXCoords;
 
     private float _fruitBoundsX;
+
+    public event Action<FruitBehaviourScript> NewFruit;
+
+    public event Action<FruitSO> NextFruit;
+
+    private FruitSO _nextFruit;
+
+
     private void OnEnable()
     {
         _mouseControls.PositionClicked += DropFruit;
@@ -42,17 +51,22 @@ public class FruitSpawner : MonoBehaviour
     }
     private void Start()
     {
+      
+
+       _nextFruit= _fruitsScriptableObjectsToSpawn[UnityEngine.Random.Range(0, _fruitsScriptableObjectsToSpawn.Length)];
+
         ChangeFruit();
     }
 
     private void DropFruit(Vector3 DropPosition)
     {
         MoveFruit(DropPosition);
-
+     
         if (_CurrentFruit != null)
         {
 
             _CurrentFruit.GravityOn(true);
+
 
             _CurrentFruit = null;
 
@@ -60,16 +74,38 @@ public class FruitSpawner : MonoBehaviour
             StartCoroutine(ChangeFruitDelay());
         }
     }
-
+  
     private void ChangeFruit()
     {
 
-        _CurrentFruit = Instantiate(_fruitPrefab, new Vector3(0, _YCoordinateSpawn, 0), Quaternion.identity);
+        _CurrentFruit = Instantiate(_fruitPrefab, new Vector3(0, _YCoordinateSpawn, 0), transform.rotation);
 
+        _CurrentFruit.UpdateFruitSO(_nextFruit);
 
-        _CurrentFruit.UpdateFruitSO(_fruitsScriptableObjectsToSpawn[Random.Range(0, _fruitsScriptableObjectsToSpawn.Length)]);
+        _nextFruit = _fruitsScriptableObjectsToSpawn[UnityEngine.Random.Range(0, _fruitsScriptableObjectsToSpawn.Length)];
 
-        _fruitBoundsX = _CurrentFruit.GetExdendsOfCollider().x;
+        NextFruit?.Invoke(_nextFruit);
+
+        NewFruit?.Invoke(_CurrentFruit);
+
+        Vector2[] points = new Vector2[_CurrentFruit.GetFruit().GetColliderPoints().Length];
+
+        points = _CurrentFruit.GetFruit().GetColliderPoints();
+
+        float xMin=0;
+
+        float xMax = 0;
+
+        for (int i = 0; i < points.Length; i++)
+        {
+            points[i] = points[i] * _CurrentFruit.GetFruit().GetSize().x * _fruitPrefab.transform.localScale.x;
+
+            if (xMax < points[i].x) xMax = points[i].x;
+
+            if (xMin > points[i].x) xMin = points[i].x;
+        }
+
+        _fruitBoundsX = xMax -xMin;
     }
 
     private IEnumerator ChangeFruitDelay()

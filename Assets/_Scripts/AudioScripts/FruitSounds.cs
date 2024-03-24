@@ -25,7 +25,7 @@ public class FruitSounds : MonoBehaviour
     {
         AudioManager.audioManager.PlaySound(_DropSound);
     }
-    private void PlayMergeSound()
+    private void PlayMergeSound(FruitSO fruit)
     {
         AudioManager.audioManager.PlaySoundPitch(_MergeSounds[Random.Range(0,_MergeSounds.Length)], Random.Range(0.8f, 1.5f));
     }

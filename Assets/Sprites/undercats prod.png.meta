@@ -1,0 +1,590 @@
+fileFormatVersion: 2
+guid: 6e61bc81bf60a014d9eea09c0d143865
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2740563674380893583
+    second: undercats prod_0
+  - first:
+      213: -4232913416276575271
+    second: undercats prod_1
+  - first:
+      213: 5300147573962046982
+    second: undercats prod_2
+  - first:
+      213: -6998363420423328764
+    second: undercats prod_3
+  - first:
+      213: 3036397965181318444
+    second: undercats prod_4
+  - first:
+      213: 1359205714037846968
+    second: undercats prod_5
+  - first:
+      213: -2871775951716296861
+    second: undercats prod_6
+  - first:
+      213: -7704553211819157780
+    second: undercats prod_7
+  - first:
+      213: 1281526819065733037
+    second: undercats prod_8
+  - first:
+      213: -21220782744943413
+    second: undercats prod_9
+  - first:
+      213: -5739169362943057541
+    second: undercats prod_10
+  - first:
+      213: -6722316321687962226
+    second: undercats prod_11
+  - first:
+      213: -2716080661116998561
+    second: undercats prod_12
+  - first:
+      213: 3265985003017771315
+    second: undercats prod_13
+  - first:
+      213: -1024318540663475250
+    second: undercats prod_14
+  - first:
+      213: 6892754076931080931
+    second: undercats prod_15
+  - first:
+      213: -3768377899643470327
+    second: undercats prod_16
+  - first:
+      213: 3203777286210999162
+    second: undercats prod_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: undercats prod_0
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 270
+        width: 356
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8dffc74420780620800000000000000
+      internalID: 2740563674380893583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_1
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 165
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db79d1ccaba145c0800000000000000
+      internalID: -4232913416276575271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_2
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 165
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60ef72b1328ed8940800000000000000
+      internalID: 5300147573962046982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_3
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 165
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c649c4c81d0ee90800000000000000
+      internalID: -6998363420423328764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_4
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 165
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c25f95f9cd3732a20800000000000000
+      internalID: 3036397965181318444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_5
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 165
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b338e1456edcd210800000000000000
+      internalID: 1359205714037846968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_6
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 165
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 367d07bbcf66528d0800000000000000
+      internalID: -2871775951716296861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_7
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 165
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce69c60acade31590800000000000000
+      internalID: -7704553211819157780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_8
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 165
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daf9c842ad5e8c110800000000000000
+      internalID: 1281526819065733037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_9
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 165
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc4c1ae7fcb94bff0800000000000000
+      internalID: -21220782744943413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_10
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 80
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7169ff2fdf5a50b0800000000000000
+      internalID: -5739169362943057541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_11
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 80
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8d7af9fbe885b2a0800000000000000
+      internalID: -6722316321687962226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_12
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 80
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c20d4770b8e4ad0800000000000000
+      internalID: -2716080661116998561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_13
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 80
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33990aa6e0c135d20800000000000000
+      internalID: 3265985003017771315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_14
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 80
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec338eed6b3e8c1f0800000000000000
+      internalID: -1024318540663475250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_15
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 80
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e24a97405bf7af50800000000000000
+      internalID: 6892754076931080931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_16
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 80
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90e7158144804bbc0800000000000000
+      internalID: -3768377899643470327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: undercats prod_17
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 80
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a73521ca77a167c20800000000000000
+      internalID: 3203777286210999162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      undercats prod_0: 2740563674380893583
+      undercats prod_1: -4232913416276575271
+      undercats prod_10: -5739169362943057541
+      undercats prod_11: -6722316321687962226
+      undercats prod_12: -2716080661116998561
+      undercats prod_13: 3265985003017771315
+      undercats prod_14: -1024318540663475250
+      undercats prod_15: 6892754076931080931
+      undercats prod_16: -3768377899643470327
+      undercats prod_17: 3203777286210999162
+      undercats prod_2: 5300147573962046982
+      undercats prod_3: -6998363420423328764
+      undercats prod_4: 3036397965181318444
+      undercats prod_5: 1359205714037846968
+      undercats prod_6: -2871775951716296861
+      undercats prod_7: -7704553211819157780
+      undercats prod_8: 1281526819065733037
+      undercats prod_9: -21220782744943413
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

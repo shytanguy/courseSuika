@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a85705954cc7f947be10747420f9bc6, type: 3}
+  m_Name: 8_Pineapple
+  m_EditorClassIdentifier: 
+  _name: Pineapple
+  _icon: {fileID: -724105580326358498, guid: 3db97ae5a08f3b14488a11dbe7f7f5a6, type: 3}
+  _pointsForMerging: 250
+  _MergeInto: {fileID: 11400000, guid: 657e257ef529a8b4d97e6fb4641e2371, type: 2}
+  _size: {x: 3.8, y: 3.8}
+  _physicsMaterial: {fileID: 6200000, guid: b3d10c2fc860d684799b7dd3ec49d18b, type: 2}
+  _colliderPoints:
+  - {x: 0.66999996, y: -2.7849998}
+  - {x: 0.78999996, y: -2.7649999}
+  - {x: 1.14, y: -2.635}
+  - {x: 1.37, y: -2.365}
+  - {x: 1.41, y: -2.305}
+  - {x: 1.49, y: -1.875}
+  - {x: 1.5, y: -1.7149999}
+  - {x: 1.4699999, y: -1.345}
+  - {x: 1.41, y: -0.945}
+  - {x: 1.27, y: -0.155}
+  - {x: 1.22, y: 0.065}
+  - {x: 1.13, y: 0.39499998}
+  - {x: 1.11, y: 0.45499998}
+  - {x: 0.86162806, y: 1.0071434}
+  - {x: 0.6229427, y: 1.3421922}
+  - {x: 0.44542247, y: 1.4947599}
+  - {x: -0.09085721, y: 1.5128671}
+  - {x: -0.48999998, y: 1.4549999}
+  - {x: -0.72999996, y: 1.1949999}
+  - {x: -0.96999997, y: 0.745}
+  - {x: -1.05, y: 0.53499997}
+  - {x: -1.17, y: 0.13499999}
+  - {x: -1.3399999, y: -0.635}
+  - {x: -1.4, y: -0.97499996}
+  - {x: -1.4699999, y: -1.395}
+  - {x: -1.5, y: -1.915}
+  - {x: -1.49, y: -2.0049999}
+  - {x: -1.4699999, y: -2.125}
+  - {x: -1.29, y: -2.5349998}
+  - {x: -1.1899999, y: -2.635}
+  - {x: -1.13, y: -2.665}
+  - {x: -1.06, y: -2.695}
+  - {x: -0.91999996, y: -2.745}
+  - {x: -0.78, y: -2.7749999}
+  _gravityScale: 1

@@ -26,10 +26,13 @@ public class FruitBehaviourScript : MonoBehaviour
 
     public event Action<FruitSO> FruitChanged;
 
-    public event Action MergeEvent;
+    public event Action<FruitSO> MergeEvent;
 
     [SerializeField] private float _growSpeed = 0.05f;
-    
+
+    private Vector3 _initScale;
+
+    [SerializeField] private GameObject _effect;
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -38,6 +41,7 @@ public class FruitBehaviourScript : MonoBehaviour
 
         _collider = GetComponent<PolygonCollider2D>();
 
+        _initScale = transform.localScale;
     }
 
     public Vector2 GetExdendsOfCollider()
@@ -47,13 +51,13 @@ public class FruitBehaviourScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (transform.localScale != (Vector3)_fruitType.GetSize())
+        if (transform.localScale != _initScale.x*(Vector3)_fruitType.GetSize())
         {
-            transform.localScale += _growSpeed*(Vector3)_fruitType.GetSize();
+            transform.localScale += _growSpeed* _initScale.x * (Vector3)_fruitType.GetSize();
 
-            if (transform.localScale.x > _fruitType.GetSize().x)
+            if (transform.localScale.x > _initScale.x * _fruitType.GetSize().x)
             {
-                transform.localScale = _fruitType.GetSize();
+                transform.localScale = _initScale.x * _fruitType.GetSize();
             }
         }
     }
@@ -61,6 +65,8 @@ public class FruitBehaviourScript : MonoBehaviour
     {
       
         transform.localScale = Vector3.zero;
+
+        _collider.enabled = false;
     }
 
     public bool GravityOn(bool gravityOn)
@@ -73,7 +79,7 @@ public class FruitBehaviourScript : MonoBehaviour
         else
         {
             _rigidBody2d.gravityScale = _fruitType.GetGravityScale();
-
+            _collider.enabled =true;
             Dropped?.Invoke();
 
         }
@@ -100,7 +106,9 @@ public class FruitBehaviourScript : MonoBehaviour
 
             UpdateFruitSO(_fruitType.GetMergeFruit());
 
-            MergeEvent?.Invoke();
+            Instantiate(_effect, transform.position, transform.rotation);
+
+            MergeEvent?.Invoke(_fruitType);
 
             transform.localScale = Vector3.zero;
         }
@@ -112,7 +120,7 @@ public class FruitBehaviourScript : MonoBehaviour
     {
         _fruitType = fruit;
 
-        transform.localScale = _fruitType.GetSize();
+       // transform.localScale = _initScale.x * _fruitType.GetSize();
 
         _spriteRenderer.sprite = _fruitType.GetSprite();
 
