@@ -20,6 +20,8 @@ public class FruitBehaviourScript : MonoBehaviour
 
     [SerializeField] private LayerMask _fruitLayer;
 
+    [SerializeField] private LayerMask _allColliders;
+
     private bool _merging=false;
 
     public event Action Dropped;
@@ -29,7 +31,8 @@ public class FruitBehaviourScript : MonoBehaviour
     public event Action<FruitSO> MergeEvent;
 
     [SerializeField] private float _growSpeed = 0.05f;
-
+    [SerializeField] private float _pushForce = 1f;
+    [SerializeField] private float _selfUpForce = 1f;
     private Vector3 _initScale;
 
     [SerializeField] private GameObject _effect;
@@ -53,12 +56,29 @@ public class FruitBehaviourScript : MonoBehaviour
     {
         if (transform.localScale != _initScale.x*(Vector3)_fruitType.GetSize())
         {
+            CheckCollisions(_collider.bounds.extents*2.5f, transform.position);
+
             transform.localScale += _growSpeed* _initScale.x * (Vector3)_fruitType.GetSize();
 
             if (transform.localScale.x > _initScale.x * _fruitType.GetSize().x)
             {
                 transform.localScale = _initScale.x * _fruitType.GetSize();
             }
+        }
+    }
+
+    private void CheckCollisions(Vector2 scale, Vector3 position)
+    {
+   
+     AddForcesToOverlapFruits(  Physics2D.OverlapCircleAll(position, scale.x, _allColliders),position);
+    }
+
+    private void AddForcesToOverlapFruits(Collider2D[] colliders, Vector3 position)
+    {
+        foreach(var collider in colliders)
+        {
+            _rigidBody2d.AddForce(_selfUpForce* Vector3.up, ForceMode2D.Force);
+            collider.attachedRigidbody?.AddForce((_pushForce*Vector3.up), ForceMode2D.Force);
         }
     }
     private void Start()
@@ -78,6 +98,8 @@ public class FruitBehaviourScript : MonoBehaviour
         }
         else
         {
+            _rigidBody2d.totalForce = Vector2.zero;
+            _rigidBody2d.velocity = Vector2.zero;
             _rigidBody2d.gravityScale = _fruitType.GetGravityScale();
             _collider.enabled =true;
             Dropped?.Invoke();

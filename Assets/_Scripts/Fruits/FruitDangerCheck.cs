@@ -9,7 +9,7 @@ public class FruitDangerCheck : MonoBehaviour
     private bool _checkForDanger=false;
 
     private bool _added;
-    private void FixedUpdate()
+  /*  private void FixedUpdate()
     { if (!_checkForDanger) return;
         if (transform.position.y > GameFlowScript.instance.yCoordinate&&_added==false)
         {
@@ -21,33 +21,46 @@ public class FruitDangerCheck : MonoBehaviour
             GameFlowScript.instance.RemoveDanger(transform);
             _added = false;
         }
-    }
+    }*/
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (_checkForDanger==false)
+
+
+        if (_checkForDanger == false) 
         _checkForDanger = true;
+        
     }
-   /* private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!_checkForDanger) return;
-        if ((_dangerZone.value & (1 << collision.gameObject.layer)) > 0)
+        if ((_dangerZone.value & (1 << collision.gameObject.layer)) > 0&&_checkForDanger&&_added==true)
         {
-            if (transform.position.y > collision.transform.position.y)
-            GameFlowScript.instance.AddDanger(transform);
-            else
-                GameFlowScript.instance.RemoveDanger(transform);
+            Debug.Log($"remove danger {gameObject} {transform.position}");
+            GameFlowScript.instance.RemoveDanger(transform);
+            _added = false;
         }
-    }*/
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if ((_dangerZone.value & (1 << collision.gameObject.layer)) > 0 && _checkForDanger && _added == true)
+        {
+            Debug.Log($"remove danger {gameObject} {transform.position}");
+            GameFlowScript.instance.RemoveDanger(transform);
+            _added = false;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if ((_dangerZone.value & (1 << collision.gameObject.layer)) > 0 && _checkForDanger&&_added==false&&gameObject.activeSelf)
+        {
+            Debug.Log($"add danger {gameObject}  {transform.position}");
+            GameFlowScript.instance.AddDanger(transform);
+            _added = true;
+        }
+    }
+ 
     private void OnDisable()
     {
         GameFlowScript.instance.RemoveDanger(transform);
     }
-   /* private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!_checkForDanger) return;
-        if ((_dangerZone.value & (1 << collision.gameObject.layer)) > 0)
-        {
-                GameFlowScript.instance.RemoveDanger(transform);
-        }
-    }*/
+
 }

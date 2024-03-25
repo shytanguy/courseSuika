@@ -42,6 +42,7 @@ public class GameFlowScript : MonoBehaviour
     }
     public  void RemoveDanger(Transform fruit)
     {
+       
         _fruitsLeftOut.Remove(fruit);
 
         if (_fruitsLeftOut.Count == 0)
@@ -64,6 +65,8 @@ public class GameFlowScript : MonoBehaviour
 
                 _fruitsLeftOut.Clear();
 
+                AdsUtilitiesScript.TryShowFullScreenAdd();
+                
                 GameLost?.Invoke();
               
 

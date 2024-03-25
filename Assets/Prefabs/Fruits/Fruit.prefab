@@ -139,7 +139,12 @@ MonoBehaviour:
   _fruitLayer:
     serializedVersion: 2
     m_Bits: 8
+  _allColliders:
+    serializedVersion: 2
+    m_Bits: 9
   _growSpeed: 0.05
+  _pushForce: 0.1
+  _selfUpForce: 0.1
   _effect: {fileID: 9164044671389968408, guid: c97bc5bfb834ccd49aa865a4d672c5e4, type: 3}
 --- !u!120 &1875752871216995255
 LineRenderer:
