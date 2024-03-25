@@ -19,7 +19,7 @@ public class MouseControls : MonoBehaviour
     private Vector3 ConvertMousePosition(Vector2 positionInput)
     {
 
-       Vector3 worldPos = _mainCam.ViewportToWorldPoint(positionInput);
+       Vector3 worldPos = _mainCam.ScreenToWorldPoint(positionInput);
 
         return worldPos;
     }
@@ -66,7 +66,7 @@ public class MouseControls : MonoBehaviour
     private void FixedUpdate()
     {
      
-       MouseHoverPositionChanged?.Invoke( _mainCam.ViewportToWorldPoint(_playerInput.actions["SetPosition"].ReadValue<Vector2>()));
+       MouseHoverPositionChanged?.Invoke( _mainCam.ScreenToWorldPoint(_playerInput.actions["SetPosition"].ReadValue<Vector2>()));
        
     }
 
