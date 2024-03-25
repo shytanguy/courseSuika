@@ -56,7 +56,7 @@ public class FruitBehaviourScript : MonoBehaviour
     {
         if (transform.localScale != _initScale.x*(Vector3)_fruitType.GetSize())
         {
-            CheckCollisions(_collider.bounds.extents*2.5f, transform.position);
+          
 
             transform.localScale += _growSpeed* _initScale.x * (Vector3)_fruitType.GetSize();
 
@@ -128,7 +128,7 @@ public class FruitBehaviourScript : MonoBehaviour
             UpdateFruitSO(_fruitType.GetMergeFruit());
 
             Instantiate(_effect, transform.position, transform.rotation);
-
+            CheckCollisions(_collider.bounds.extents * 3f, transform.position);
             MergeEvent?.Invoke(_fruitType);
 
             transform.localScale = Vector3.zero;
