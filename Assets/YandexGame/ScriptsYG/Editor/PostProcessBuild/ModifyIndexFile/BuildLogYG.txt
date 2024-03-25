@@ -1,2 +1,2 @@
 Build path: E:/watermelon game yandex
-Build number: 5
+Build number: 6
