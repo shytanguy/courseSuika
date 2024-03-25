@@ -69,7 +69,6 @@ public class FruitBehaviourScript : MonoBehaviour
 
     private void CheckCollisions(Vector2 scale, Vector3 position)
     {
-   
      AddForcesToOverlapFruits(  Physics2D.OverlapCircleAll(position, scale.x, _allColliders),position);
     }
 
