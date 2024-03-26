@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PauseMenuController : MonoBehaviour
 {
@@ -14,14 +15,20 @@ public class PauseMenuController : MonoBehaviour
         _paused = !_paused;
         Pause?.Invoke(_paused);
     }
+
+    
     private void Start()
     {
         Pause += PauseMenuSetUp;
+        Cursor.visible = false;
+       
+            
     }
     private void PauseMenuSetUp(bool pause)
     {
         _pauseMenu.SetActive(pause);
-
+        Cursor.visible = pause;
+      
         if (pause) Time.timeScale = 0;
         else
             Time.timeScale = 1f;

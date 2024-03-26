@@ -4594,6 +4594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 2146276500}
   _pauseMenu: {fileID: 1148022063}
+  _mouseXClamp: {x: -1.5, y: 1.5}
 --- !u!4 &2146276502
 Transform:
   m_ObjectHideFlags: 0
