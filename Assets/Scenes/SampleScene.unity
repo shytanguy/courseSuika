@@ -1608,7 +1608,7 @@ Transform:
   m_GameObject: {fileID: 512842508}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: -2.68, z: 0}
+  m_LocalPosition: {x: 0.07, y: -3.08, z: 0}
   m_LocalScale: {x: 2.9802268, y: 4.489784, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3248,8 +3248,8 @@ Transform:
   m_GameObject: {fileID: 1229268637}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.42, y: -2.815, z: 0}
-  m_LocalScale: {x: 0.5, y: 4.7, z: 1}
+  m_LocalPosition: {x: -1.42, y: -3.05, z: 0}
+  m_LocalScale: {x: 0.5, y: 4.2533116, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4447,8 +4447,8 @@ Transform:
   m_GameObject: {fileID: 2106372962}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.71, y: -2.815, z: 0}
-  m_LocalScale: {x: 0.5, y: 4.7, z: 1}
+  m_LocalPosition: {x: 1.71, y: -3.05, z: 0}
+  m_LocalScale: {x: 0.5, y: 4.2533116, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4594,7 +4594,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 2146276500}
   _pauseMenu: {fileID: 1148022063}
-  _mouseXClamp: {x: -1.5, y: 1.5}
 --- !u!4 &2146276502
 Transform:
   m_ObjectHideFlags: 0
