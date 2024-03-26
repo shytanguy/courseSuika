@@ -9,25 +9,23 @@ public class FruitDangerCheck : MonoBehaviour
     private bool _checkForDanger=false;
 
     private bool _added;
-  /*  private void FixedUpdate()
-    { if (!_checkForDanger) return;
-        if (transform.position.y > GameFlowScript.instance.yCoordinate&&_added==false)
-        {
-            _added = true;
-            GameFlowScript.instance.AddDanger(transform);
-        }
-        else if (_added == true && transform.position.y < GameFlowScript.instance.yCoordinate)
-        {
-            GameFlowScript.instance.RemoveDanger(transform);
-            _added = false;
-        }
-    }*/
+   
     private void OnCollisionStay2D(Collision2D collision)
     {
 
 
-        if (_checkForDanger == false) 
-        _checkForDanger = true;
+        if (_checkForDanger == false)
+        {
+            _checkForDanger = true;
+
+         if(   Physics2D.OverlapCircle(transform.position, 0.1f, _dangerZone) == null)
+            {
+
+                Debug.Log($"add danger {gameObject}  {transform.position}");
+                GameFlowScript.instance.AddDanger(transform);
+                _added = true;
+            }
+        }
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
