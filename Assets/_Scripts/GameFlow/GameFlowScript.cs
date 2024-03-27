@@ -65,8 +65,6 @@ public class GameFlowScript : MonoBehaviour
 
                 _fruitsLeftOut.Clear();
 
-                AdsUtilitiesScript.TryShowFullScreenAdd();
-                
                 GameLost?.Invoke();
               
 

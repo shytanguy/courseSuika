@@ -10,6 +10,7 @@ public class PauseMenuController : MonoBehaviour
 
     private bool _paused=false;
     [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameFlowScript _gameFlow;
     public void PauseEvent()
     {
         _paused = !_paused;
@@ -19,10 +20,26 @@ public class PauseMenuController : MonoBehaviour
     
     private void Start()
     {
-        Pause += PauseMenuSetUp;
+      
         Cursor.visible = false;
        
             
+    }
+    private void OnEnable()
+    {
+        _gameFlow.GameLost += GameEnd;
+        Pause += PauseMenuSetUp;
+    }
+
+    private void OnDisable()
+    {
+        _gameFlow.GameLost -= GameEnd;
+        Pause -= PauseMenuSetUp;
+    }
+
+    private void GameEnd()
+    {
+        Pause -= PauseMenuSetUp;
     }
     private void PauseMenuSetUp(bool pause)
     {
