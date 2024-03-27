@@ -18,6 +18,7 @@ public class FruitSpawner : MonoBehaviour
 
     [SerializeField] private Vector2 _AllowedXCoords;
 
+    [SerializeField] private GameFlowScript _gameFlow;
     private float _fruitBoundsX;
 
     public event Action<FruitBehaviourScript> NewFruit;
@@ -30,10 +31,16 @@ public class FruitSpawner : MonoBehaviour
     private void OnEnable()
     {
         _mouseControls.PositionClicked += DropFruit;
-
+        _gameFlow.GameLost += DisableControls;
         _mouseControls.MouseHoverPositionChanged += MoveFruit;
     }
     private void OnDisable()
+    {
+        _mouseControls.PositionClicked -= DropFruit;
+        _gameFlow.GameLost -= DisableControls;
+        _mouseControls.MouseHoverPositionChanged -= MoveFruit;
+    }
+    private void DisableControls()
     {
         _mouseControls.PositionClicked -= DropFruit;
 
@@ -111,7 +118,7 @@ public class FruitSpawner : MonoBehaviour
     private IEnumerator ChangeFruitDelay()
     {
         if (_CurrentFruit != null) yield break;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.75f);
 
         ChangeFruit();
     }
