@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using YG;
 
 public class ScoreCounter : MonoBehaviour
 {
@@ -9,16 +10,20 @@ public class ScoreCounter : MonoBehaviour
 
   [SerializeField]  private FruitSpawner _fruitSpawner;
 
+    [SerializeField] private GameFlowScript gameFlow;
+
     private int _score;
 
     private void OnEnable()
     {
         _fruitSpawner.NewFruit += AddNewEvent;
+        gameFlow.GameLost += AddScore;
     }
 
     private void OnDisable()
     {
         _fruitSpawner.NewFruit -= AddNewEvent;
+        gameFlow.GameLost -= AddScore;
     }
     private void AddNewEvent(FruitBehaviourScript fruit)
     {
@@ -32,9 +37,15 @@ public class ScoreCounter : MonoBehaviour
         _scoreText.text = _score.ToString();
     }
 
-    private void AddScore()
+    public void AddScore()
     {
-        
+        if (_score > YandexGame.savesData.score)
+        {
+            YandexGame.savesData.score = _score;
+            YandexGame.SaveProgress();
+            
+            YandexGame.NewLeaderboardScores("records", _score);
+        }
     }
    
 }

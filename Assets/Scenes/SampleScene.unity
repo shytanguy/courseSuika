@@ -203,7 +203,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.05
+  m_fontSize: 9.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0420\u0435\u043A\u043E\u0440\u0434"
+  m_text: "\u0412\u0430\u0448\u0438 \u043E\u0447\u043A\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: edcb3e7e8bc6db947ac7ac1f14a1dc9b, type: 2}
   m_sharedMaterial: {fileID: -3831793865978272050, guid: edcb3e7e8bc6db947ac7ac1f14a1dc9b, type: 2}
@@ -2363,6 +2363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 1095683711}
   _fruitSpawner: {fileID: 2146276499}
+  gameFlow: {fileID: 512842513}
 --- !u!1 &748635272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3009,6 +3010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseMenu: {fileID: 281230238}
+  _gameFlow: {fileID: 512842513}
 --- !u!114 &1148022064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4606,7 +4608,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d3afcd376c243964fa2ff0c8bf2f998f, type: 2}
   - {fileID: 11400000, guid: d3afcd376c243964fa2ff0c8bf2f998f, type: 2}
   _YCoordinateSpawn: 0.5
-  _AllowedXCoords: {x: -1, y: 1.3}
+  _AllowedXCoords: {x: -1.1, y: 1.4}
+  _gameFlow: {fileID: 512842513}
 --- !u!114 &2146276500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4694,6 +4697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 1799102080}
   _fruitSpawner: {fileID: 2146276499}
+  gameFlow: {fileID: 512842513}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

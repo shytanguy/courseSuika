@@ -21,7 +21,7 @@ public class FruitDangerCheck : MonoBehaviour
          if(   Physics2D.OverlapCircle(transform.position, 0.1f, _dangerZone) == null)
             {
 
-                Debug.Log($"add danger {gameObject}  {transform.position}");
+              
                 GameFlowScript.instance.AddDanger(transform);
                 _added = true;
             }
@@ -32,7 +32,7 @@ public class FruitDangerCheck : MonoBehaviour
     {
         if ((_dangerZone.value & (1 << collision.gameObject.layer)) > 0&&_checkForDanger&&_added==true)
         {
-            Debug.Log($"remove danger {gameObject} {transform.position}");
+         
             GameFlowScript.instance.RemoveDanger(transform);
             _added = false;
         }
@@ -41,7 +41,7 @@ public class FruitDangerCheck : MonoBehaviour
     {
         if ((_dangerZone.value & (1 << collision.gameObject.layer)) > 0 && _checkForDanger && _added == true)
         {
-            Debug.Log($"remove danger {gameObject} {transform.position}");
+       
             GameFlowScript.instance.RemoveDanger(transform);
             _added = false;
         }
@@ -50,7 +50,7 @@ public class FruitDangerCheck : MonoBehaviour
     {
         if ((_dangerZone.value & (1 << collision.gameObject.layer)) > 0 && _checkForDanger&&_added==false&&gameObject.activeSelf)
         {
-            Debug.Log($"add danger {gameObject}  {transform.position}");
+           
             GameFlowScript.instance.AddDanger(transform);
             _added = true;
         }
