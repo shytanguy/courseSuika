@@ -39,18 +39,22 @@ public class RemoveFruitsForAD : MonoBehaviour
     {
         if (Time.time - _Timer >= _TimeBeforeAd)
         {
+            _Timer = Time.time;
 
             AdsUtilitiesScript.ShowRewardedAd(_RewardId);
 
-            _Timer = Time.time;
+            
 
         }
     }
 
     public void Update()
     {
-        if (_timerText!=null)
-        _timerText.text = (_TimeBeforeAd - Time.time - _Timer).ToString("0");
+        if (_timerText != null)
+        { if ((_TimeBeforeAd - (Time.time - _Timer)) > 0)
+                _timerText.text = (_TimeBeforeAd - (Time.time - _Timer)).ToString("0");
+            else _timerText.text = "";
+        }
     }
 
 }
