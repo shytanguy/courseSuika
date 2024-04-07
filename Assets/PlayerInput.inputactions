@@ -47,6 +47,17 @@
                 },
                 {
                     "name": "",
+                    "id": "208dd031-69fb-4004-8258-628d8f147aef",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SetPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "cc869674-7c67-4856-9861-f344398547d0",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -60,6 +71,17 @@
                     "name": "",
                     "id": "406e24a3-f503-497d-bf3c-f04fa6aa8071",
                     "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0420d070-2540-4feb-b278-f082930caad9",
+                    "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
