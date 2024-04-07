@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Cinemachine.CinemachineFreeLook;
 
 public class FruitBehaviourScript : MonoBehaviour
 {
@@ -120,11 +121,7 @@ public class FruitBehaviourScript : MonoBehaviour
 
         if (fruit.GetFruit() == _fruitType)
         {
-            fruit.enabled = false;
-
-            fruit.gameObject.layer = 0;
-
-            Destroy(fruit.gameObject);
+           fruit.CollapseFruit();
 
             UpdateFruitSO(_fruitType.GetMergeFruit());
 
@@ -137,7 +134,14 @@ public class FruitBehaviourScript : MonoBehaviour
 
         _merging = false;
     }
+    public void CollapseFruit()
+    {
+        this.enabled = false;
 
+        gameObject.layer = 0;
+
+        Destroy(gameObject);
+    }
     public void UpdateFruitSO(FruitSO fruit)
     {
         _fruitType = fruit;

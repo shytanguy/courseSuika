@@ -16,7 +16,10 @@ public class NextFruitIcon : MonoBehaviour
         _fruitSpawner.NextFruit += ChangeIcon;
 
     }
-
+    private void OnDisable()
+    {
+        _fruitSpawner.NextFruit -= ChangeIcon;
+    }
     private void ChangeIcon(FruitSO fruit)
     {
         _nextFruitIcon.sprite = fruit.GetSprite();

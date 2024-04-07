@@ -21,4 +21,9 @@ public static class AdsUtilitiesScript
         else
             YandexGame.FullscreenShow();
     }
+
+    public static void ShowRewardedAd(int id)
+    {
+        YandexGame.RewVideoShow(id);
+    }
 }

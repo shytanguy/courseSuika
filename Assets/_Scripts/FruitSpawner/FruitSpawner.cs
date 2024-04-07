@@ -74,6 +74,7 @@ public class FruitSpawner : MonoBehaviour
 
             _CurrentFruit.GravityOn(true);
 
+            NewFruit?.Invoke(_CurrentFruit);
 
             _CurrentFruit = null;
 
@@ -93,7 +94,7 @@ public class FruitSpawner : MonoBehaviour
 
         NextFruit?.Invoke(_nextFruit);
 
-        NewFruit?.Invoke(_CurrentFruit);
+      
 
         Vector2[] points = new Vector2[_CurrentFruit.GetFruit().GetColliderPoints().Length];
 
