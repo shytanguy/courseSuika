@@ -50,6 +50,7 @@ public class FruitSpawner : MonoBehaviour
     {
         if (_CurrentFruit == null) return;
 
+        position = new Vector3(position.x + _AllowedXCoords.x,0,0);
         float XCoordinate =Mathf.Clamp(  position.x,_AllowedXCoords.x+_fruitBoundsX/2,_AllowedXCoords.y-_fruitBoundsX/2);
 
         _CurrentFruit.transform.position = new Vector3(XCoordinate, _YCoordinateSpawn);
@@ -67,8 +68,12 @@ public class FruitSpawner : MonoBehaviour
 
     private void DropFruit(Vector3 DropPosition)
     {
+<<<<<<< HEAD
         MoveFruit(DropPosition);
      
+=======
+      
+>>>>>>> 1284b3b (fixed cursor)
         if (_CurrentFruit != null)
         {
 

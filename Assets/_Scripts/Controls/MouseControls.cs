@@ -65,8 +65,13 @@ public class MouseControls : MonoBehaviour
     }
     private void FixedUpdate()
     {
+<<<<<<< HEAD
      
        MouseHoverPositionChanged?.Invoke( _mainCam.ScreenToWorldPoint(_playerInput.actions["SetPosition"].ReadValue<Vector2>()));
+=======
+        Debug.Log(ConvertMousePosition(_playerInput.actions["SetPosition"].ReadValue<Vector2>()));
+       MouseHoverPositionChanged?.Invoke(ConvertMousePosition(_playerInput.actions["SetPosition"].ReadValue<Vector2>()));
+>>>>>>> 1284b3b (fixed cursor)
        
     }
 
