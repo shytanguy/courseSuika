@@ -18,13 +18,7 @@ public class PauseMenuController : MonoBehaviour
     }
 
     
-    private void Start()
-    {
-      
-        Cursor.visible = false;
-       
-            
-    }
+
     private void OnEnable()
     {
         _gameFlow.GameLost += GameEnd;
@@ -44,7 +38,7 @@ public class PauseMenuController : MonoBehaviour
     private void PauseMenuSetUp(bool pause)
     {
         _pauseMenu.SetActive(pause);
-        Cursor.visible = pause;
+    
       
         if (pause) Time.timeScale = 0;
         else

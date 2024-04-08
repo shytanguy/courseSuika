@@ -65,7 +65,7 @@ public class MouseControls : MonoBehaviour
     }
     private void FixedUpdate()
     {
-     
+        Debug.Log(ConvertMousePosition(_playerInput.actions["SetPosition"].ReadValue<Vector2>()));
        MouseHoverPositionChanged?.Invoke(ConvertMousePosition(_playerInput.actions["SetPosition"].ReadValue<Vector2>()));
        
     }
