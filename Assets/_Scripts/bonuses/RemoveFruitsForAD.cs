@@ -35,6 +35,10 @@ public class RemoveFruitsForAD : MonoBehaviour
             _fruitsContainer.RemoveAllFruits();
         }
     }
+    public bool CanWatchAd()
+    {
+        return (Time.time - _Timer >= _TimeBeforeAd);
+    }
     public void WatchAd()
     {
         if (Time.time - _Timer >= _TimeBeforeAd)

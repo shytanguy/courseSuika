@@ -48,12 +48,12 @@ public class MouseControls : MonoBehaviour
 
         _playerInput.actions["Pause"].performed += PauseGameInput;
 
-        _pauseMenu.Pause += PauseMouse;
+       PauseMenuController.Pause += PauseMouse;
       
     }
     private void PauseGameInput(InputAction.CallbackContext context)
     {
-        _pauseMenu.PauseEvent();
+        _pauseMenu.PauseWithMenuEvent();
     }
     private void OnDisable()
     {
@@ -61,7 +61,7 @@ public class MouseControls : MonoBehaviour
 
         _playerInput.actions["Pause"].performed -= PauseGameInput;
 
-        _pauseMenu.Pause -= PauseMouse;
+        PauseMenuController.Pause -= PauseMouse;
     }
     private void FixedUpdate()
     {
