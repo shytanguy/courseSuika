@@ -68,12 +68,10 @@ public class FruitSpawner : MonoBehaviour
 
     private void DropFruit(Vector3 DropPosition)
     {
-<<<<<<< HEAD
+
         MoveFruit(DropPosition);
      
-=======
-      
->>>>>>> 1284b3b (fixed cursor)
+
         if (_CurrentFruit != null)
         {
 
