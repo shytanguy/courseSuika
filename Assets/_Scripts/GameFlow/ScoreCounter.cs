@@ -45,7 +45,10 @@ public class ScoreCounter : MonoBehaviour
 
  private void SaveScore()
     {
-        DatabaseManager.AddOrUpdatePlayerTotalPoints(1, _score);
+        if (_score > DatabaseManager.GetPlayerPoints(1))
+        {
+            DatabaseManager.AddOrUpdatePlayerTotalPoints(1, _score);
+        }
     }
    
 }
