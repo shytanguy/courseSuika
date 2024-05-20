@@ -60,6 +60,26 @@ public class DatabaseManager : MonoBehaviour
         }
         CloseConnection();
     }
+    // Метод для получения очков фрукта по его ID
+    public int GetFruitPointsById(int fruitId)
+    {
+        OpenConnection();
+        string query = "SELECT points FROM Fruits WHERE fruit_id = @fruit_id";
+        int points = 0;
+
+        using (var command = new NpgsqlCommand(query, connection))
+        {
+            command.Parameters.AddWithValue("fruit_id", fruitId);
+            object result = command.ExecuteScalar();
+            if (result != DBNull.Value)
+            {
+                points = Convert.ToInt32(result);
+            }
+        }
+        CloseConnection();
+
+        return points;
+    }
 
     // Метод для получения очков игрока
     public int GetPlayerPoints(int playerId)
