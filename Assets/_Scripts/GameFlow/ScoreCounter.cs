@@ -19,6 +19,10 @@ public class ScoreCounter : MonoBehaviour
         GameFlowScript.instance.GameLost += SaveScore;
       
     }
+    private void Start()
+    {
+        DatabaseManager.AddPlayerIfNotExists(1, "matvey");
+    }
 
     private void OnDisable()
     {

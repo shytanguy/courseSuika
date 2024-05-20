@@ -37,6 +37,23 @@ public static class DatabaseManager
             Debug.Log("Connection closed successfully");
         }
     }
+
+    public static void AddPlayerIfNotExists(int playerId, string playerName)
+    {
+        OpenConnection();
+        string query = @"
+        INSERT INTO Players (player_id, name)
+        VALUES (@player_id, @name)
+        ON CONFLICT (player_id) DO NOTHING";
+
+        using (var command = new NpgsqlCommand(query, connection))
+        {
+            command.Parameters.AddWithValue("player_id", playerId);
+            command.Parameters.AddWithValue("name", playerName);
+            command.ExecuteNonQuery();
+        }
+        CloseConnection();
+    }
     public static void AddOrUpdatePlayerTotalPoints(int playerId, int totalPoints)
     {
         OpenConnection();
