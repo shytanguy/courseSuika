@@ -53,7 +53,9 @@ public class DatabaseManager : MonoBehaviour
                     string fruitName = reader.GetString(0);
                     int points = reader.GetInt32(1);
                     Debug.Log($"Fruit: {fruitName}, Points: {points}");
+                    
                 }
+                
             }
         }
         CloseConnection();
