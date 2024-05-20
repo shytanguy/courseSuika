@@ -35,10 +35,6 @@ public class FruitDropTrajectoryScript : MonoBehaviour
         _lineRenderer.positionCount =2;
     }
     
-
-  
-   
-
     private void OnDisable()
     {
      

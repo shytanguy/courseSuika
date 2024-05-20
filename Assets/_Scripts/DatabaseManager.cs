@@ -37,6 +37,24 @@ public static class DatabaseManager
             Debug.Log("Connection closed successfully");
         }
     }
+    public static void AddOrUpdatePlayerTotalPoints(int playerId, int totalPoints)
+    {
+        OpenConnection();
+        string query = @"
+            INSERT INTO PlayerTotalPoints (player_id, total_points)
+            VALUES (@player_id, @total_points)
+            ON CONFLICT (player_id) 
+            DO UPDATE SET 
+                total_points = EXCLUDED.total_points";
+
+        using (var command = new NpgsqlCommand(query, connection))
+        {
+            command.Parameters.AddWithValue("player_id", playerId);
+            command.Parameters.AddWithValue("total_points", totalPoints);
+            command.ExecuteNonQuery();
+        }
+        CloseConnection();
+    }
 
     // Метод для получения данных о фруктах
     public static void GetFruitPoints()

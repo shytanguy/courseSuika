@@ -10,20 +10,21 @@ public class ScoreCounter : MonoBehaviour
 
   [SerializeField]  private FruitSpawner _fruitSpawner;
 
-   
-
+    
     private int _score;
 
     private void OnEnable()
     {
         _fruitSpawner.NewFruit += AddNewEvent;
+        GameFlowScript.instance.GameLost += SaveScore;
       
     }
 
     private void OnDisable()
     {
         _fruitSpawner.NewFruit -= AddNewEvent;
-  
+        GameFlowScript.instance.GameLost -= SaveScore;
+
     }
     private void AddNewEvent(FruitBehaviourScript fruit)
     {
@@ -34,9 +35,13 @@ public class ScoreCounter : MonoBehaviour
     {
         _score += fruit.GetPoints();
 
+
         _scoreText.text = _score.ToString();
     }
 
- 
+ private void SaveScore()
+    {
+        DatabaseManager.AddOrUpdatePlayerTotalPoints(1, _score);
+    }
    
 }
