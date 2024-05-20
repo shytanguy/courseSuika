@@ -952,6 +952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 352988293}
+  - component: {fileID: 352988294}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -974,6 +975,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &352988294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352988292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b5770a87b3b644e99f4d3809ac75cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &366741340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,15 +1471,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a82f3f69cdf6b69459f5f534c986a98f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meshRenderer: {fileID: 0}
   _fruitLayer:
+    serializedVersion: 2
     m_Bits: 8
   _Danger: 0
   _flashSpeed: 0.01
   _transparency: 1
-  _addTransparency: 1
   _TimeBeforeDanger: 1
-  _Colliding: 0
 --- !u!61 &500798787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1662,9 +1673,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeToLose: 3
   yCoordinate: -0.4
-  _timer: 0
-  _fruitsInDanger: 0
-  _fruitsLeftOut: []
 --- !u!114 &512842514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1679,8 +1687,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _TimerSound: {fileID: 8300000, guid: 4d0e85bf2e99b3f43a0fd65e1a7d01f0, type: 3}
   _LostSound: {fileID: 0}
-  _gameFlowScript: {fileID: 0}
-  _timer: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,7 +2350,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 1095683711}
   _fruitSpawner: {fileID: 2146276499}
-  _score: 0
 --- !u!1 &748635272
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,7 +2529,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac884411829b7714fb9cba7949bfaba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _volumeSlider: {fileID: 0}
   _testClip: {fileID: 8300000, guid: 4308aacefc9803a4aa2b0210bc15f06b, type: 3}
 --- !u!1 &969200472
 GameObject:
@@ -2941,8 +2945,6 @@ MonoBehaviour:
   MusicVolume: 0.5
   SfxVolume: 0.5
   _TimeBetweenSameSounds: 0.5
-  _lastSound: {fileID: 0}
-  _initPitch: 0
 --- !u!4 &1143246968
 Transform:
   m_ObjectHideFlags: 0
@@ -2993,8 +2995,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126856cb6c23578458d2dd21185c8676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _paused: 0
   _pauseMenu: {fileID: 281230238}
+  _gameFlow: {fileID: 0}
 --- !u!114 &1148022064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4591,11 +4593,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 29ba2d1fe6001524a9a112fcdfbf01db, type: 2}
   - {fileID: 11400000, guid: d3afcd376c243964fa2ff0c8bf2f998f, type: 2}
   - {fileID: 11400000, guid: d3afcd376c243964fa2ff0c8bf2f998f, type: 2}
-  _CurrentFruit: {fileID: 0}
   _YCoordinateSpawn: 0.5
   _AllowedXCoords: {x: -1.1, y: 1.4}
-  _fruitBoundsX: 0
-  _nextFruit: {fileID: 0}
+  _gameFlow: {fileID: 0}
 --- !u!114 &2146276500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4639,7 +4639,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 2146276500}
-  _mainCam: {fileID: 0}
   _pauseMenu: {fileID: 1148022063}
 --- !u!4 &2146276502
 Transform:
@@ -4669,7 +4668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textMesh: {fileID: 547431921}
-  _initScale: {x: 0, y: 0, z: 0}
   _flowScript: {fileID: 512842513}
 --- !u!114 &2146276504
 MonoBehaviour:
@@ -4685,7 +4683,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 1799102080}
   _fruitSpawner: {fileID: 2146276499}
-  _score: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
