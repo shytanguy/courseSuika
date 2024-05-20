@@ -6,16 +6,16 @@ using System.Data;
 public class DatabaseManager : MonoBehaviour
 {
     private string host = "localhost"; // Адрес сервера PostgreSQL
-    private string database = "your_database_name"; // Имя базы данных
-    private string username = "your_username"; // Имя пользователя PostgreSQL
-    private string password = "your_password"; // Пароль пользователя PostgreSQL
+    private string database = "KURS2.0"; // Имя базы данных
+    private string username = "postgres"; // Имя пользователя PostgreSQL
+    private string password = "1"; // Пароль пользователя PostgreSQL
 
     private NpgsqlConnection connection;
 
     // Метод для открытия соединения
     private void OpenConnection()
     {
-        string connectionString = $"Host={host};Username={username};Password={password};Database={database}";
+        string connectionString = $"Host={host};Username={username};Password={1};Database={database}";
         connection = new NpgsqlConnection(connectionString);
         try
         {
