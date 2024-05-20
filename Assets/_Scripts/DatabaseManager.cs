@@ -41,7 +41,7 @@ public static class DatabaseManager
     {
         OpenConnection();
         string query = @"
-            INSERT INTO PlayerTotalPoints (player_id, total_points)
+            INSERT INTO playertotalpoints (player_id, total_points)
             VALUES (@player_id, @total_points)
             ON CONFLICT (player_id) 
             DO UPDATE SET 
