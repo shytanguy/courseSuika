@@ -3,17 +3,17 @@ using Npgsql;
 using System;
 using System.Data;
 
-public class DatabaseManager : MonoBehaviour
+public static class DatabaseManager
 {
-    private string host = "localhost"; // Адрес сервера PostgreSQL
-    private string database = "KURS2.0"; // Имя базы данных
-    private string username = "postgres"; // Имя пользователя PostgreSQL
-    private string password = "1"; // Пароль пользователя PostgreSQL
+    private static string host = "localhost"; 
+    private static string database = "KURS2.0";
+    private static string username = "postgres";
+    private static string password = "1"; 
 
-    private NpgsqlConnection connection;
+    private static NpgsqlConnection connection;
 
-    // Метод для открытия соединения
-    private void OpenConnection()
+  
+    private static void OpenConnection()
     {
         string connectionString = $"Host={host};Username={username};Password={1};Database={database}";
         connection = new NpgsqlConnection(connectionString);
@@ -29,7 +29,7 @@ public class DatabaseManager : MonoBehaviour
     }
 
     // Метод для закрытия соединения
-    private void CloseConnection()
+    private static void CloseConnection()
     {
         if (connection != null && connection.State == ConnectionState.Open)
         {
@@ -39,7 +39,7 @@ public class DatabaseManager : MonoBehaviour
     }
 
     // Метод для получения данных о фруктах
-    public void GetFruitPoints()
+    public static void GetFruitPoints()
     {
         OpenConnection();
         string query = "SELECT name, points FROM Fruits";
@@ -61,7 +61,7 @@ public class DatabaseManager : MonoBehaviour
         CloseConnection();
     }
     // Метод для получения очков фрукта по его ID
-    public int GetFruitPointsById(int fruitId)
+    public static int GetFruitPointsById(int fruitId)
     {
         OpenConnection();
         string query = "SELECT points FROM Fruits WHERE fruit_id = @fruit_id";
@@ -82,7 +82,7 @@ public class DatabaseManager : MonoBehaviour
     }
 
     // Метод для получения очков игрока
-    public int GetPlayerPoints(int playerId)
+    public static int GetPlayerPoints(int playerId)
     {
         OpenConnection();
         string query = "SELECT SUM(total_points) FROM PlayerFruitPoints WHERE player_id = @player_id";
@@ -104,11 +104,5 @@ public class DatabaseManager : MonoBehaviour
         return totalPoints;
     }
 
-    // Пример вызова методов
-    private void Start()
-    {
-        GetFruitPoints();
-        int playerPoints = GetPlayerPoints(1); // Получение очков для игрока с ID 1
-        Debug.Log($"Total points for player 1: {playerPoints}");
-    }
+   
 }

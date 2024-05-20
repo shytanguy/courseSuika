@@ -987,6 +987,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b5770a87b3b644e99f4d3809ac75cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  host: localhost
+  database: KURS2.0
+  username: postgres
+  password: 1
 --- !u!1 &366741340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2996,7 +3000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseMenu: {fileID: 281230238}
-  _gameFlow: {fileID: 0}
+  _gameFlow: {fileID: 512842513}
 --- !u!114 &1148022064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4595,7 +4599,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d3afcd376c243964fa2ff0c8bf2f998f, type: 2}
   _YCoordinateSpawn: 0.5
   _AllowedXCoords: {x: -1.1, y: 1.4}
-  _gameFlow: {fileID: 0}
+  _gameFlow: {fileID: 512842513}
 --- !u!114 &2146276500
 MonoBehaviour:
   m_ObjectHideFlags: 0

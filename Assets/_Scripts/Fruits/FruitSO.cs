@@ -22,6 +22,7 @@ public class FruitSO : ScriptableObject
 
     [SerializeField] private float _gravityScale;
 
+    [SerializeField] private int _Id;
     public float GetGravityScale()
     {
         return _gravityScale;
@@ -62,5 +63,18 @@ public class FruitSO : ScriptableObject
     public FruitSO GetMergeFruit()
     {
         return _MergeInto;
+    }
+
+    private void OnEnable()
+    {
+        try
+        {
+            _pointsForMerging = DatabaseManager.GetFruitPointsById(_Id);
+            Debug.Log("assigned points to fruit succesfully");
+        }
+        catch
+        {
+            Debug.Log("could not assign points");
+        }
     }
 }
