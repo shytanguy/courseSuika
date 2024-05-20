@@ -67,11 +67,17 @@ public class DatabaseManager : MonoBehaviour
         OpenConnection();
         string query = "SELECT SUM(total_points) FROM PlayerFruitPoints WHERE player_id = @player_id";
         int totalPoints = 0;
-
-        using (var command = new NpgsqlCommand(query, connection))
+        try
         {
-            command.Parameters.AddWithValue("player_id", playerId);
-            totalPoints = Convert.ToInt32(command.ExecuteScalar());
+            using (var command = new NpgsqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("player_id", playerId);
+                totalPoints = Convert.ToInt32(command.ExecuteScalar());
+            }
+        }
+        catch
+        {
+            Debug.Log("error with database");
         }
         CloseConnection();
 
