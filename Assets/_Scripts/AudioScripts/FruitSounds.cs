@@ -12,6 +12,7 @@ public class FruitSounds : MonoBehaviour
 
     private FruitBehaviourScript _fruitBehaviour;
 
+  
     
     void Start()
     {
@@ -27,7 +28,10 @@ public class FruitSounds : MonoBehaviour
     }
     private void PlayMergeSound(FruitSO fruit)
     {
+        if (fruit.GetMergeSound()==null)
         AudioManager.audioManager.PlaySoundPitch(_MergeSounds[Random.Range(0,_MergeSounds.Length)], Random.Range(0.8f, 1.5f));
+        else
+            AudioManager.audioManager.PlaySound(fruit.GetMergeSound());
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

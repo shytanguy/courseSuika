@@ -22,6 +22,7 @@ public class FruitSO : ScriptableObject
 
     [SerializeField] private float _gravityScale;
 
+    [SerializeField] private AudioClip _mergeSound;
     public float GetGravityScale()
     {
         return _gravityScale;
@@ -62,5 +63,10 @@ public class FruitSO : ScriptableObject
     public FruitSO GetMergeFruit()
     {
         return _MergeInto;
+    }
+
+    public AudioClip GetMergeSound()
+    {
+        return _mergeSound;
     }
 }
