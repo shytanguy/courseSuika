@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a85705954cc7f947be10747420f9bc6, type: 3}
+  m_Name: 4_bad film
+  m_EditorClassIdentifier: 
+  _name: "\u043A\u0440\u0438\u0432\u043E \u0441\u043D\u044F\u0442"
+  _icon: {fileID: 2558672236935663561, guid: 221435800a545f84e8ded3bbc81b1d3f, type: 3}
+  _pointsForMerging: 25
+  _MergeInto: {fileID: 11400000, guid: 274407b1f14cc0b47a29450eca770b61, type: 2}
+  _size: {x: 6, y: 6}
+  _physicsMaterial: {fileID: 6200000, guid: b3d10c2fc860d684799b7dd3ec49d18b, type: 2}
+  _colliderPoints:
+  - {x: 1.49, y: -1.38}
+  - {x: 1.49, y: -1.26}
+  - {x: 1.4699999, y: -1.17}
+  - {x: 1.4399999, y: -1.0799999}
+  - {x: 1.31, y: -0.72999996}
+  - {x: 1.16, y: -0.44}
+  - {x: 1.04, y: -0.34}
+  - {x: 0.87, y: -0.26}
+  - {x: 0.48999998, y: -0.089999996}
+  - {x: 0.34, y: 0.03}
+  - {x: 0.38, y: 0.34}
+  - {x: 0.38, y: 0.59}
+  - {x: 0.35, y: 0.84}
+  - {x: 0.32999998, y: 0.97999996}
+  - {x: 0.26, y: 1.14}
+  - {x: 0.21, y: 1.24}
+  - {x: 0.14, y: 1.3199999}
+  - {x: 0.049999997, y: 1.36}
+  - {x: -0.089999996, y: 1.42}
+  - {x: -0.26999998, y: 1.42}
+  - {x: -0.53, y: 1.1999999}
+  - {x: -0.58, y: 1.12}
+  - {x: -0.59999996, y: 0.95}
+  - {x: -0.59, y: 0.78999996}
+  - {x: -0.57, y: 0.68}
+  - {x: -0.51, y: 0.45999998}
+  - {x: -0.45, y: 0.29999998}
+  - {x: -0.32999998, y: 0.08}
+  - {x: -0.37, y: -0.06}
+  - {x: -0.65, y: -0.17}
+  - {x: -0.93, y: -0.26}
+  - {x: -1.03, y: -0.32999998}
+  - {x: -1.15, y: -0.44}
+  - {x: -1.22, y: -0.56}
+  - {x: -1.3199999, y: -0.82}
+  - {x: -1.42, y: -1.12}
+  - {x: -1.48, y: -1.25}
+  - {x: -1.49, y: -1.3199999}
+  - {x: -1.49, y: -1.38}
+  - {x: -1.4699999, y: -1.41}
+  - {x: -1.26, y: -1.42}
+  - {x: 1.4499999, y: -1.42}
+  _gravityScale: 1
+  _mergeSound: {fileID: 8300000, guid: 26f94eacbd64b7e468b89103d0c750aa, type: 3}
